@@ -15,9 +15,17 @@
         display: grid;
         justify-items: center;
       }
-      .pj-container {
+      .choose-container {
+        position: fixed;
+        top: 1em;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        z-index: 2;
+      }
+     .pj-container {
         position: absolute;
-        left: 35em;
+        right: 50%;
+        padding-right: 2em;
         top: {{dollarHeight}}em;
         z-index: 1;
       }
@@ -36,6 +44,9 @@
       <img src="assets/bloque-2.png" />
       <img src="assets/bloque-1.png" />
       <img src="assets/piso.png" />
+    </div>
+    <div class="choose-container">
+      <img src="assets/choose.png" />
     </div>
     <div class="pj-container">
       <img src="assets/dolar.png" />
