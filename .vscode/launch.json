@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Test Generator",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/update.js",
+      "args": ["test"]
+    }
+  ]
+}
