@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dolar MK</title>
+    <title>Dólar MK</title>
     <style>
       html {
         image-rendering: pixelated;
@@ -29,6 +29,11 @@
         top: {{dollarHeight}}em;
         z-index: 1;
       }
+      .text-container {
+        position: fixed;
+        bottom: 0%;
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -50,6 +55,17 @@
     </div>
     <div class="pj-container">
       <img src="assets/dolar.png" />
+    </div>
+    <div class="text-container">
+      <div class="left-part">
+        <h1>Dólar MK</h1>
+        <p>Actualizado en tiempo real</p>
+        <p>Valor del dólar blue: {{dollarValue}}</p>
+        <p>Última actualización: {{lastUpdate}}</p>
+      </div>
+      <div class="right-part">
+        <h2>Compartir</h2>
+      </div>
     </div>
 
     <script>

@@ -35,6 +35,7 @@ function updateHtml(apiData) {
   const template = fs.readFileSync("./template.html", "utf-8");
   const html = template
     .replace("{{dollarHeight}}", dollarHeight)
+    .replace("{{dollarValue}}", dollarValue)
     .replace("{{lastUpdate}}", lastUpdate);
   fs.writeFileSync("public/index.html", html);
 }
