@@ -51,5 +51,13 @@
     <div class="pj-container">
       <img src="assets/dolar.png" />
     </div>
+
+    <script>
+      window.onload = function () {
+        document
+          .getElementsByClassName("pj-container")[0]
+          .scrollIntoView({ behaviour: "smooth", block: "center" });
+      };
+    </script>
   </body>
 </html>
