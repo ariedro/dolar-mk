@@ -30,10 +30,19 @@
         z-index: 1;
       }
       .text-container {
+        color: white;
+        text-shadow: 4px 4px black;
+      }
+      .left-text {
         position: fixed;
         bottom: 0%;
-        color: white;
-      }
+        left: 2%;
+       }
+      .right-text {
+        position: fixed;
+        bottom: 0%;
+        right: 2%;
+       }
     </style>
   </head>
   <body>
@@ -56,13 +65,13 @@
       <img src="assets/dolar.png" />
     </div>
     <div class="text-container">
-      <div class="left-part">
+      <div class="left-text">
         <h1>Dólar MK</h1>
         <p>Actualizado en tiempo real</p>
         <p>Valor del dólar blue: {{dollarValue}}</p>
         <p>Última actualización: {{lastUpdate}}</p>
       </div>
-      <div class="right-part">
+      <div class="right-text">
         <h2>Compartir</h2>
       </div>
     </div>
