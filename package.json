@@ -1,0 +1,21 @@
+{
+  "name": "dolar-mk",
+  "version": "1.0.0",
+  "description": "Mortal Kombat tower meme for the current dollar price in Argentina",
+  "scripts": {
+    "update": "node update.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariedro/dolar-mk.git"
+  },
+  "author": "ariedro",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/ariedro/dolar-mk/issues"
+  },
+  "homepage": "https://github.com/ariedro/dolar-mk#readme",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.12"
+  }
+}
