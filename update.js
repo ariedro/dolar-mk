@@ -1,6 +1,13 @@
 const https = require('https');
 const fs = require('fs');
 const cheerio = require('cheerio');
+require('dotenv').config();
+
+const { OUTPUT_HTML } = process.env;
+if (!OUTPUT_HTML) {
+  console.log('Missing env variables');
+  process.exit(1);
+}
 
 const start = 5.75;
 
@@ -33,7 +40,7 @@ function updateHtml(apiData) {
     .replace('{{dollarHeight}}', dollarHeight)
     .replace('{{dollarValue}}', dollarValue)
     .replace('{{lastUpdate}}', lastUpdate);
-  fs.writeFileSync('public/index.html', html);
+  fs.writeFileSync(OUTPUT_HTML, html);
 }
 
 onResponse = html => {
@@ -47,7 +54,7 @@ onResponse = html => {
 };
 
 if (process.argv[2] === 'test') {
-  updateHtml({ venta: 320.50, fecha: '2022/07/21 15:43:36' });
+  updateHtml({ venta: 320.5, fecha: '2022/07/21 15:43:36' });
 } else {
   https
     .get('https://embed.valordolarblue.com.ar', res => {

@@ -10,6 +10,16 @@ Data taken from https://valordolarblue.com.ar
 $ npm install
 ```
 
+## Config
+
+Copy the `env.sample` to `.env`
+
+```
+$ cp env.sample .env
+```
+
+If you need a different output HTML location, change the `OUTPUT_HTML` env variable
+
 ## Run
 
 ```
