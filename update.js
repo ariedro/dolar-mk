@@ -1,5 +1,4 @@
-const https = require("https");
-const fs = require("fs");
+const cheerio = require('cheerio');
 
 const start = 5.75;
 
@@ -40,15 +39,24 @@ function updateHtml(apiData) {
   fs.writeFileSync("public/index.html", html);
 }
 
+onResponse = html => {
+  const $ = cheerio.load(html);
+  const ventaTxt = $('.value').eq(1).find('strong').text();
+  const fechaTxt = $('.lastupdate span').attr('title');
+  updateHtml({
+    venta: parseFloat(ventaTxt.replace(',', '.')),
+    fecha: fechaTxt.replace('Cotizaciones actualizadas al ', ''),
+  });
+};
+
 if (process.argv[2] === 'test') {
   updateHtml({ venta: 320.50, fecha: '2022/07/21 15:43:36' });
 } else {
   https
-    .get('https://api-dolar-argentina.herokuapp.com/api/dolarblue', res => {
+    .get('https://embed.valordolarblue.com.ar', res => {
       const data = [];
       res.on('data', chunk => data.push(chunk));
-      res.on('end', () => updateHtml(JSON.parse(Buffer.concat(data).toString())));
+      res.on('end', () => onResponse(Buffer.concat(data).toString()));
     })
     .on('error', err => console.error('Error: ', err.message));
 }
-
