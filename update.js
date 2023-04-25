@@ -49,7 +49,7 @@ onResponse = html => {
   const fechaTxt = $('.lastupdate span').attr('title');
   updateHtml({
     venta: parseFloat(ventaTxt.replace(',', '.')),
-    fecha: fechaTxt.replace('Cotizaciones actualizadas al ', ''),
+    fecha: fechaTxt.replace('Cotizaciones actualizadas al ', '').split(':').slice(0, 2).join(':'),
   });
 };
 
