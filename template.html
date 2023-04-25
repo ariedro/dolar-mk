@@ -45,24 +45,27 @@
         z-index: 1;
       }
       .text-container {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
         color: white;
         text-shadow: 4px 4px black;
       }
       .left-text {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;
         position: fixed;
         bottom: 0%;
         left: 2%;
-       }
+      }
       .right-text {
         position: fixed;
-        bottom: 0%;
-        right: 2%;
-       }
-       .share-icon {
-        width: 64px;
-       }
+        bottom: 2%;
+        right: 1%;
+      }
+      .share-icon {
+        margin-right: 10px;
+      }
+      .share-icon img {
+        width: 48px;
+      }
     </style>
   </head>
   <body>
@@ -92,32 +95,36 @@
       <div class="right-text">
         <h2>Compartir</h2>
         <a
+          class="share-icon"
           href="https://twitter.com/intent/tweet?source=mkdolar.blue&amp;text=Mirá%20a%20cuánto%20escaló%20el%20dólar%20blue%20en%20la%20torre%20del%20Mortal%20Kombat%20https%3A%2F%2Fmkdolar.blue%2F"
           title="Compartir en Twitter"
           target="_blank"
         >
-          <img class="share-icon" src="assets/share-twitter.svg" />
+          <img src="assets/share-twitter.svg" />
         </a>
         <a
+          class="share-icon"
           href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmkdolar.blue%2F"
           title="Compartir en Facebook"
           target="_blank"
         >
-          <img class="share-icon" src="assets/share-facebook.svg" />
+          <img src="assets/share-facebook.svg" />
         </a>
         <a
+          class="share-icon"
           href="https://t.me/share/url?url=https%3A%2F%2Fmkdolar.blue%2F&text=Mirá%20a%20cuánto%20escaló%20el%20dólar%20blue%20en%20la%20torre%20del%20Mortal%20Kombat"
           title="Compartir en Telegram"
           target="_blank"
         >
-          <img class="share-icon" src="assets/share-telegram.svg" />
+          <img src="assets/share-telegram.svg" />
         </a>
         <a
+          class="share-icon"
           href="https://wa.me/?text=Mirá%20a%20cuánto%20escaló%20el%20dólar%20blue%20en%20la%20torre%20del%20Mortal%20Kombat%20https%3A%2F%2Fmkdolar.blue%2F"
           title="Compartir en Whatsapp"
           target="_blank"
         >
-          <img class="share-icon" src="assets/share-whatsapp.svg" />
+          <img src="assets/share-whatsapp.svg" />
         </a>
       </div>
     </div>
