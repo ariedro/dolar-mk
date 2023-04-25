@@ -37,9 +37,9 @@ function updateHtml(apiData) {
 
   const template = fs.readFileSync('./template.html', 'utf-8');
   const html = template
-    .replace('{{dollarHeight}}', dollarHeight)
-    .replace('{{dollarValue}}', dollarValue)
-    .replace('{{lastUpdate}}', lastUpdate);
+    .replace(/{{dollarHeight}}/g, dollarHeight)
+    .replace(/{{dollarValue}}/g, dollarValue)
+    .replace(/{{lastUpdate}}/g, lastUpdate);
   fs.writeFileSync(OUTPUT_HTML, html);
 }
 

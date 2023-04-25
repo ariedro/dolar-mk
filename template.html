@@ -37,34 +37,86 @@
         transform: translate(-50%, 0%);
         z-index: 2;
       }
-     .pj-container {
+      .pj-container {
         position: absolute;
         right: 50%;
         padding-right: 2em;
         top: {{dollarHeight}}em;
         z-index: 1;
       }
-      .text-container {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;
-        color: white;
-        text-shadow: 4px 4px black;
+      /* Desktop */
+      @media only screen and (min-device-width: 960px) {
+        .only-mobile {
+          display: none;
+        }
+        .text-container {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 20px;
+          color: white;
+          text-shadow: 4px 4px black;
+        }
+        .left-text {
+          position: fixed;
+          bottom: 0%;
+          left: 2%;
+        }
+        .left-text b {
+          font-size: 40px;
+          color: #f5f5f5;
+          text-shadow: 0px -2px 4px #fff, 0px -2px 10px #ff3, 0px -10px 20px #f90, 0px -20px 40px #c33;
+        }
+        .right-text {
+          position: fixed;
+          bottom: 2%;
+          right: 1%;
+        }
+        .share-icon {
+          margin-right: 10px;
+        }
+        .share-icon img {
+          width: 48px;
+        }
       }
-      .left-text {
-        position: fixed;
-        bottom: 0%;
-        left: 2%;
-      }
-      .right-text {
-        position: fixed;
-        bottom: 2%;
-        right: 1%;
-      }
-      .share-icon {
-        margin-right: 10px;
-      }
-      .share-icon img {
-        width: 48px;
+      /* Mobile */
+      @media only screen and (max-device-width: 959px) {
+        .only-desktop {
+          display: none;
+        }
+        .text-container {
+          font-family: Arial, Helvetica, sans-serif;
+          padding: 10px;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background: #222;
+          color: #ffffff;
+        }
+        .text-container p {
+          margin: 0.1em;
+        }
+        .last-update {
+          font-size: 1.5em;
+        }
+        .left-text {
+          float: left;
+          text-align: center;
+        }
+        .left-text b {
+          font-size: 6em;
+          color: #f5f5f5;
+          text-shadow: 0px -2px 4px #fff, 0px -2px 10px #ff3, 0px -10px 20px #f90, 0px -20px 40px #c33;
+        }
+        .right-text {
+          float: right;
+          margin-right: 1em;
+        }
+        .share-icon {
+          margin-right: 1em;
+        }
+        .share-icon img {
+          width: 4em;
+        }
       }
     </style>
   </head>
@@ -89,7 +141,8 @@
     </div>
     <div class="text-container">
       <div class="left-text">
-        <p>Dólar blue: ${{dollarValue}}</p>
+        <p class="only-desktop">Dólar blue: &nbsp;<b>$&nbsp;{{dollarValue}}</b></p>
+        <p class="only-mobile"><b>$&nbsp;{{dollarValue}}</b></p>
         <p>Última actualización: {{lastUpdate}}</p>
       </div>
       <div class="right-text">
