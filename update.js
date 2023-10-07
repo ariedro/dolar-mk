@@ -12,7 +12,7 @@ if (!OUTPUT_HTML) {
 const start = 5.75;
 
 const step = 24;
-const billetes = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
+const billetes = [2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
 
 function rectFn(x1, x2, y1, y2) {
   const m = (y2 - y1) / (x2 - x1);
